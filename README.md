@@ -9,7 +9,7 @@ The object detection projects in this repository are based on the work of Aladdi
 - Repository: [Machine-Learning-Collection](https://github.com/aladdinpersson/Machine-Learning-Collection/tree/master/ML/Pytorch/object_detection)
 - Author: Aladdin Persson
 
-I have utilized the object detection implementations from this repository as a reference for my own projects. All credit for the object detection implementations goes to Aladdin Persson.
+I have utilized the object detection implementations from this repository as a reference for my own projects.
 
 ## Classification
 
