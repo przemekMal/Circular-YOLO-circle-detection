@@ -13,48 +13,70 @@ I have adapted the object detection implementations from this repository as a fo
 
 ## Usage
 
-YOLO Circle Bounding Box Training
+# YOLOv1-Circle Training Script
 
-This script trains a custom YOLOv3 model with circular bounding boxes on a specified dataset. The model is built for detecting objects represented by circular bounding boxes instead of traditional rectangular ones, providing enhanced accuracy for circular or round objects.
-Requirements:
+This project implements a YOLOv1 model using circular bounding boxes for object detection. The model is trained on custom datasets and leverages PyTorch for deep learning.
 
-    Torch for model and tensor operations
-    TorchVision for transformations and augmentation
-    Utilities provided in CircleYoloModule, including custom loss functions and data utilities
+## Requirements
 
-Steps:
+- Python 3.8+
+- PyTorch
+- torchvision
+- CUDA (optional, for GPU acceleration)
+- Colab environment (for the given paths)
 
-    Set Up Hyperparameters:
-        You can adjust batch size, learning rate, weight decay, and more in the HIPERPARAMETERS section.
-        Ensure the paths to save the model and checkpoints are set according to your file structure.
+### Installation
 
-    Data Preparation:
-        Datasets are unpacked and transformed. You need to specify your data archives using the paths provided:
-            Example datasets:
-                ARH_PATH_0 = /content/drive/MyDrive/!MojeYolov1/archiwumJabłkaParts.zip
-                ARH_PATH_1 = /content/drive/MyDrive/!MojeYolov1/archiwumMinnerApple.zip
-                ARH_PATH_2 = /content/drive/MyDrive/!MojeYolov1/archiwumACFR_multifruit-2016(apples_only).zip
-        This code splits the dataset into training, validation, and testing sets with a ratio of 90%, 5%, and 5% respectively.
-        Transforms include resizing, color jittering, and normalization for image augmentation.
+1. Install dependencies by running the following command:
 
-    Model Training:
-        The model structure is defined in the Yolo_V3 class.
-        You can load a pre-trained model by setting LOAD_MODEL to True and providing the path to the model weights.
-        During training, the script will periodically save the best-performing model based on the highest mAP (mean Average Precision) and store a CSV file with the epoch loss and mAP values for later analysis.
-        Checkpoints are saved every epoch, and you can restart training from the last saved checkpoint.
+   ```bash
+   pip install torch torchvision
+   ```
 
-    Evaluation:
-        The evaluation is performed every 10 epochs, using mAP @50 as the metric. If the mAP reaches 95%, the training stops early.
+2. Clone the repository and place your datasets in the specified directories or update the paths accordingly.
 
-    File Paths to Edit:
-        Model Save Path: Adjust PATH_TO_SAVE_MODEL to specify where to save the trained model.
-        Checkpoint Save Path: Update PATH_TO_SAVE_CHECKPOINT to specify the location for saving checkpoints.
-        CSV Save Path: Set DST_PATH_END_CSV to the path for saving the CSV containing loss and mAP values.
-        Dataset Paths: Make sure the archive paths (ARH_PATH_0, ARH_PATH_1, etc.) point to your dataset files.
+## Training Instructions
 
-Recommended Environment:
+1. **Update Paths**:
+   - Modify the following paths in the script to point to your own directories:
+     - `PATH_TO_SAVE_MODEL`: Path to save the trained YOLO model.
+     - `PATH_TO_SAVE_CHECKPOINT`: Path to save model checkpoints.
+     - `DST_PATH_END_CSV`: Path to save the CSV file containing training loss and AP (Average Precision).
+     - `ARH_PATH_0`, `ARH_PATH_1`, `ARH_PATH_2`: Paths to your dataset archives. These archives will be unpacked during training.
 
-For this script, I highly recommend using Google Colab, as it provides free access to GPU resources, making training faster and more efficient. The script can be executed seamlessly in Colab by uploading your dataset and setting the appropriate file paths.
+2. **Training Configuration**:
+   - The model hyperparameters (such as batch size, learning rate, and epochs) can be adjusted in the script. The default settings are:
+     - `BATCH_SIZE = 64`
+     - `LEARNING_RATE = 1e-5`
+     - `EPOCHS = 250`
+   - Other important settings like image size, number of classes, and stride are also configurable in the script.
+
+3. **Run the Script**:
+   - Ensure that the necessary datasets are available, and the paths to the datasets are correctly specified.
+   - To start the training, execute the following command:
+
+     ```bash
+     python train_yolov1_circle.py
+     ```
+
+4. **Model Checkpoints**:
+   - The model will save checkpoints every 5 epochs (or as specified). If `LOAD_MODEL = True`, the script will attempt to load the last checkpoint to resume training.
+
+5. **CSV Logging**:
+   - During training, the loss and AP for each epoch will be logged into the CSV file specified by `DST_PATH_END_CSV`.
+
+## Example Paths
+
+```python
+PATH_TO_SAVE_MODEL = '/content/drive/MyDrive/Models/yoloV1_circle.pth'
+PATH_TO_SAVE_CHECKPOINT = '/content/drive/MyDrive/Models/checkpoint_yoloV1_circle.pth'
+DST_PATH_END_CSV = '/content/drive/MyDrive/Results/yoloV1_loss_ap.csv'
+ARH_PATH_0 = '/content/drive/MyDrive/Datasets/dataset1.zip'
+ARH_PATH_1 = '/content/drive/MyDrive/Datasets/dataset2.zip'
+ARH_PATH_2 = '/content/drive/MyDrive/Datasets/dataset3.zip'
+```
+
+Make sure to modify the paths above to match the location of your files and directories.
 
 ## License
 
