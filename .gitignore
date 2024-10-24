@@ -1,0 +1,40 @@
+# Ignorowanie plików systemowych
+.DS_Store
+Thumbs.db
+
+# Ignorowanie plików środowiska Python
+__pycache__/
+*.py[cod]
+*.so
+*.pyd
+*.zip
+
+# Ignorowanie środowisk wirtualnych
+venv/
+env/
+
+# Ignorowanie zapisanych modeli, checkpointów, i wyników
+*.pth
+*.pt
+*.h5
+*.ckpt
+*.csv
+checkpoints/
+results/
+
+# Ignorowanie danych testowych i archiwów
+*.zip
+*.tar
+*.gz
+
+# Ignorowanie plików wygenerowanych przez IDE
+.vscode/
+.idea/
+*.iml
+
+# Ignorowanie plików logów
+*.log
+logs/
+
+# Ignorowanie plików Jupyter Notebook checkpointów
+.ipynb_checkpoints/
