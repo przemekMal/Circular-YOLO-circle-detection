@@ -62,7 +62,3 @@ ARH_PATH_2 = '/content/drive/MyDrive/Datasets/dataset3.zip'
 ```
 
 Make sure to modify the paths above to match the location of your files and directories.
-
-## Additional Information
-
-This repository presents a variation of the YOLOv1 model where instead of height and width in bounding boxes, radius is used. All functions are based on detecting circles instead of rectangles.
