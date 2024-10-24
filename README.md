@@ -1,16 +1,3 @@
-# Machine Learning Repository
-
-This repository hosts a collection of machine learning projects implemented in PyTorch, covering object detection, classification, and more.
-
-## Object Detection
-
-The object detection projects in this repository are inspired by the work of Aladdin Persson. You can find the original source code in the following GitHub repository:
-
-- Repository: [Machine-Learning-Collection](https://github.com/aladdinpersson/Machine-Learning-Collection/tree/master/ML/Pytorch/object_detection)
-- Author: Aladdin Persson
-
-I have adapted the object detection implementations from this repository as a foundation for our projects.
-
 ## Usage
 
 # YOLOv1-Circle Training Script
