@@ -1,5 +1,3 @@
-## Usage
-
 # YOLOv1-Circle Training Script
 
 This project implements a YOLOv1 model using circular bounding boxes for object detection. The model is trained on custom datasets and leverages PyTorch for deep learning.
@@ -67,4 +65,4 @@ Make sure to modify the paths above to match the location of your files and dire
 
 ## Additional Information
 
-This repository presents a variation of the YOLOv1 model where instead of height and width in bounding boxes, radius is used. All functions are based on detecting circles instead of rectangles. Additionally, a model has been trained for detecting apples, achieving a final mAP (mean Average Precision) of 25% over the range from 0.5 to 0.95.
+This repository presents a variation of the YOLOv1 model where instead of height and width in bounding boxes, radius is used. All functions are based on detecting circles instead of rectangles.
