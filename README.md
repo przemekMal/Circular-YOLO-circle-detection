@@ -65,10 +65,6 @@ ARH_PATH_2 = '/content/drive/MyDrive/Datasets/dataset3.zip'
 
 Make sure to modify the paths above to match the location of your files and directories.
 
-## License
-
-This repository is licensed under the [MIT License](LICENSE).
-
 ## Additional Information
 
 This repository presents a variation of the YOLOv1 model where instead of height and width in bounding boxes, radius is used. All functions are based on detecting circles instead of rectangles. Additionally, a model has been trained for detecting apples, achieving a final mAP (mean Average Precision) of 25% over the range from 0.5 to 0.95.
